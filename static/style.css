@@ -1,0 +1,49 @@
+body {
+  background-image: url("bg.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: aliceblue;
+}
+
+.clock {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 56px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.circle {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure the text doesn't overflow the circle */
+  position: relative;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: rgb(4,5,9);
+  background: radial-gradient(circle, rgba(4,5,9,1) 28%, rgba(23,45,154,1) 83%, rgba(252,252,255,1) 86%);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); 
+  z-index: -1; 
+}
+
+/* Add this style for the smaller font size of the date */
+#time div:nth-child(2) {
+  font-size: 20px;
+}
